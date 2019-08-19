@@ -1,0 +1,54 @@
+description = "Default layout"
+==
+{# created by petepearl #}
+{# petepearl.ru/folio #}
+{# pzhemchugov@gmail.com #}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#f5431a">
+    <meta name="theme-color" content="#f5431a">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    {# get параметр нужен для демонстрации верстки на хостинге, чтобы кэш стилей сбросить, уберите на этапе программинга #}
+    <link href="{{ ['assets/scss/main.scss']|theme }}" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{{ 'assets/js/jquery-ui.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/js.js'|theme }}"></script>
+
+
+</head>
+<body>
+
+<div class="page">
+    <div class="content">
+        {# Не разбивал на мелкие компоненты, потому что сказали, что у вас не будет front-end фреймворка... #}
+        {# Удачи в программинге ;) #}
+        {% partial 'ad-1920' %}
+        {% partial 'header' %}
+        {% partial 'burger' %}
+        <nav class="nav">
+            {% partial 'menu' %}
+        </nav>
+        {% partial 'channels' %}
+        {% partial 'container' %}
+        {% partial 'stream' %}
+        {% partial 'slider' %}
+
+        {% partial 'tiles' %}
+        {% partial 'ad-1920' %}
+        {% partial 'footer' %}
+    </div>
+</div>
+
+</body>
+</html>

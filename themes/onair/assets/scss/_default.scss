@@ -1,0 +1,47 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  color: #303E4D;
+  background: #fff;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #ececec
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: #5A5A5A;
+  }
+}
+
+//цвета выделения
+::selection,
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+.font-roboto {
+  // font-family: 'Roboto', sans-serif;
+}
+
+.ovh {
+  overflow: hidden;
+}

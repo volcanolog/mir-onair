@@ -1,0 +1,37 @@
+.branding {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  &__part {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+
+    &--full {
+      transform: translateX(-50%);
+    }
+
+    &--left {
+      left: unset;
+      right: 50%;
+      margin: 0 600px 0 0;
+    }
+
+    &--right {
+      margin: 0 0 0 600px;
+    }
+  }
+
+  img {
+    display: block;
+  }
+}

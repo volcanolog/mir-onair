@@ -1,0 +1,22 @@
+.translation {
+  display: flex;
+
+  &__video {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  &__further {
+    flex-shrink: 0;
+    flex-basis: 240px;
+    background: #ffffff;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .translation {
+    // border-top: 60px solid #303E4D;
+    display: block;
+  }
+}
