@@ -1,5 +1,6 @@
 Demo Theme
 ==========
+TEST
 
 OctoberCMS demo theme that demonstrates the basic core functionality and utilizes the accompanying demo plugin. It is a great theme to copy when building a site from scratch. 
 
