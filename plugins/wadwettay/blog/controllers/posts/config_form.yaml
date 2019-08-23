@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post
+
+# Model Form Field configuration
+form: $/wadwettay/blog/models/post/fields.yaml
+
+# Model Class name
+modelClass: Wadwettay\Blog\Models\Post
+
+# Default redirect location
+defaultRedirect: wadwettay/blog/posts
+
+# Create page
+create:
+    title: Create Post
+    redirect: wadwettay/blog/posts/update/:id
+    redirectClose: wadwettay/blog/posts
+
+# Update page
+update:
+    title: Edit Post
+    redirect: wadwettay/blog/posts
+    redirectClose: wadwettay/blog/posts
+
+# Preview page
+preview:
+    title: Preview Post
