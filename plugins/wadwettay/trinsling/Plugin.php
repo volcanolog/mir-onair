@@ -50,10 +50,10 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
+//        return []; // Remove this line to activate
 
         return [
-            'Wadwettay\Trinsling\Components\MyComponent' => 'myComponent',
+            'Wadwettay\Trinsling\Components\Streams' => 'trinsling',
         ];
     }
 
@@ -81,15 +81,22 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
+//        return []; // Remove this line to activate
 
         return [
             'trinsling' => [
-                'label'       => 'trinsling',
-                'url'         => Backend::url('wadwettay/trinsling/mycontroller'),
+                'label'       => 'Трансляция',
+                'url'         => Backend::url('wadwettay/trinsling/streams'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['wadwettay.trinsling.*'],
                 'order'       => 500,
+                'sideMenu' => [
+                    'streams' => [
+                        'label'       => 'Потоки',
+                        'icon'        => 'icon-list-alt',
+                        'url'         => \Backend::url('wadwettay/trinsling/streams'),
+                    ],
+                ]
             ],
         ];
     }
