@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+    icon:
+        label: Иконка
+        type: fileupload
+    src:
+        label: SRC
+    src_for_apple:
+        label: SRC apple
+    poster:
+        label: Постер
+        type: fileupload

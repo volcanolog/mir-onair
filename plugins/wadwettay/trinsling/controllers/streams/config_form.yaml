@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Stream
+
+# Model Form Field configuration
+form: $/wadwettay/trinsling/models/stream/fields.yaml
+
+# Model Class name
+modelClass: Wadwettay\Trinsling\Models\Stream
+
+# Default redirect location
+defaultRedirect: wadwettay/trinsling/streams
+
+# Create page
+create:
+    title: Create Stream
+    redirect: wadwettay/trinsling/streams/update/:id
+    redirectClose: wadwettay/trinsling/streams
+
+# Update page
+update:
+    title: Edit Stream
+    redirect: wadwettay/trinsling/streams
+    redirectClose: wadwettay/trinsling/streams
+
+# Preview page
+preview:
+    title: Preview Stream

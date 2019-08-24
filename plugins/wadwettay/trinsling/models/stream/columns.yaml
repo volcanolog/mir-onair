@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Заголовок
+    src:
+        label: SRC
+    src_for_apple:
+        label: SRC apple
+    created_at:
+        label: Дата создания
