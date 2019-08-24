@@ -50,10 +50,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Wadwettay\Blog\Components\MyComponent' => 'myComponent',
+            'Wadwettay\Blog\Components\Posts' => 'news',
         ];
     }
 
@@ -94,7 +92,7 @@ class Plugin extends PluginBase
                     'posts' => [
                         'label'       => 'Новости',
                         'icon'        => 'icon-list-alt',
-                        'url'         => \Backend::url('iillexial/catalog/posts'),
+                        'url'         => \Backend::url('wadwettay/blog/posts'),
                     ],
                 ]
             ],

@@ -3,6 +3,7 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
+    category:
+        label: Категория
+    limit:
+        label: Количетсво

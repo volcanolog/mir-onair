@@ -3,6 +3,7 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    category:
+        label: Категория
+    limit:
+        label: Количетсво

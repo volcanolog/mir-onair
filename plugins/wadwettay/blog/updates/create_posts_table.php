@@ -11,6 +11,10 @@ class CreatePostsTable extends Migration
         Schema::create('wadwettay_blog_posts', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+
+            $table->integer('category');
+            $table->integer('limit');
+
             $table->timestamps();
         });
     }
