@@ -2,8 +2,8 @@
     {% for stream in trinsling.getStreams %}
         <div class="tab {% if loop.first %}active{% endif %}" data-index="{{ stream.id }}">
             <div class="video">
-                <video controls poster="{{ stream.poster.path }}" src="{{ stream.src_for_apple }}">
-                    <source type="application/x-mpegurl" src="{{ stream.src }}" itemprop="contentURL">
+                <video controls poster="{{ stream.poster.path }}">
+                    <source type="application/x-mpegurl" src="{{ stream.src }}">
                 </video>
             </div>
         </div>
