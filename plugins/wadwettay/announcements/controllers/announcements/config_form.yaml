@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Announcement
+
+# Model Form Field configuration
+form: $/wadwettay/announcements/models/announcement/fields.yaml
+
+# Model Class name
+modelClass: Wadwettay\Announcements\Models\Announcement
+
+# Default redirect location
+defaultRedirect: wadwettay/announcements/announcements
+
+# Create page
+create:
+    title: Create Announcement
+    redirect: wadwettay/announcements/announcements/update/:id
+    redirectClose: wadwettay/announcements/announcements
+
+# Update page
+update:
+    title: Edit Announcement
+    redirect: wadwettay/announcements/announcements
+    redirectClose: wadwettay/announcements/announcements
+
+# Preview page
+preview:
+    title: Preview Announcement

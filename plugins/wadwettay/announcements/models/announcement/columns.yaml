@@ -8,7 +8,9 @@ columns:
         searchable: true
     title:
         label: Заголовок
-    src:
-        label: SRC
+    description:
+        label: Описание
+    date:
+        label: Дата
     created_at:
         label: Дата создания
