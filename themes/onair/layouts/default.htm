@@ -18,14 +18,22 @@ description = "Default layout"
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="{{ ['assets/js/plyr/plyr.css']|theme }}"/>
     {# get параметр нужен для демонстрации верстки на хостинге, чтобы кэш стилей сбросить, уберите на этапе программинга #}
+    <link href="{{ ['assets/js/video/video-js.css']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/scss/main.scss']|theme }}" rel="stylesheet">
 
     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
-    <script src="{{ 'assets/js/plyr/plyr.min.js'|theme }}"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.12.4/hls.min.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="{{ 'assets/js/video/libs/html5shiv.js'|theme }}" type="text/javascript"></script>
+    <script src="{{ 'assets/js/video/libs/respond.min.js'|theme }}" type="text/javascript"></script>
+    <![endif]-->
+    <!-- include flowplayer -->
+    <script src="{{ 'assets/js/video/flowplayer.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/flowplayer.hlsjs.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/modernizr.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/video.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/videojs-contrib-hls.min.js'|theme }}"></script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="{{ 'assets/js/jquery-ui.min.js'|theme }}"></script>

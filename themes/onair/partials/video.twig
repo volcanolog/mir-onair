@@ -1,11 +1,7 @@
 <div class="trinsling-tabs">
     {% for stream in trinsling.getStreams %}
         <div class="tab {% if loop.first %}active{% endif %}" data-index="{{ stream.id }}">
-            <div class="video">
-                <video controls poster="{{ stream.poster.path }}">
-                    <source type="application/x-mpegurl" src="{{ stream.src }}">
-                </video>
-            </div>
+            <div class="video" data-rand="{{ random() }}" data-stream="{{ stream.src }}"></div>
         </div>
     {% endfor %}
 </div>
