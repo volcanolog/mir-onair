@@ -1,20 +1,37 @@
 (function ($) {
-    $.ajax({
-        url: '//dev19.mir24.tv/api/smart/v1/channels',
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            let broadcastsToday = data[0].broadcasts.filter(item => dateFns.isToday(new Date(item.time.begin)));
-            let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
-            let result = broadcastsToday.slice(index);
-            $('span.onair__subtitle').empty().html(result[0].title);
-            result = result.slice(1)
-            $('.program .in').empty();
-            result.forEach(item => $('.program .in').append('<div class="program__item">' +
-                '<div class="program__time">' + dateFns.format(item.time.begin, 'HH:mm') + '</div>' +
-                '<div class="program__name">' + item.title + '</div>' +
-                '</div>'));
-            $('.program').addClass('loaded').find('i').fadeOut(150);
+    window.program = {
+        programContain: $('.program'),
+        program: $('.program .in'),
+        playingNow: $('span.onair__subtitle'),
+        reset: function() {
+            this.playingNow.empty()
+            this.program.empty();
+            this.programContain.removeClass('loaded').find('i').fadeIn(150);
+            return this;
+        },
+        premium: function() {
+            let that = this;
+            $.ajax({
+                url: '//dev19.mir24.tv/api/smart/v1/channels',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    let broadcastsToday = data[0].broadcasts.filter(item => dateFns.isToday(new Date(item.time.begin)));
+                    let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
+                    let result = broadcastsToday.slice(index);
+                    that.playingNow.html(result[0].title);
+                    result = result.slice(1)
+                    result.forEach(item => that.program.append('<div class="program__item">' +
+                        '<div class="program__time">' + dateFns.format(item.time.begin, 'HH:mm') + '</div>' +
+                        '<div class="program__name">' + item.title + '</div>' +
+                        '</div>'));
+                    that.programContain.addClass('loaded').find('i').fadeOut(150);
+                }
+            });
         }
+    }
+
+    $(document).ready(function () {
+        // window.program.reset().premium();
     });
 })(jQuery);

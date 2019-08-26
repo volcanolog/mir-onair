@@ -44,6 +44,12 @@
             $('.translation .video').each(function () {
                 $(this).data('player').pause();
             });
+            $('.further__title').empty().html('Далее на ' + that.find('.channel__name').html());
+            if (id == 6) {
+                window.program.reset().premium();
+            }else {
+                window.program.reset();
+            }
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
 
