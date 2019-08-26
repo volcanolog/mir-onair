@@ -2,6 +2,10 @@
 
     $(document).ready(function() {
 
+        window.players = [];
+
+        let radio = window.mirplayer;
+
         $('.translation .video').each(function () {
             let playerId = 'html5player-' + $(this).data('rand');
             let stream = $(this).data('stream');
@@ -9,7 +13,11 @@
                 $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls autoplay>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
-                let player = videojs(playerId);
+                let player = videojs(playerId)
+                    .on('playing', function () {
+                        radio.pause();
+                    });
+                window.players.push(player);
                 $(this).data('player', player);
             } else {
                 $(this).data('player', flowplayer(playerId,{
@@ -27,6 +35,7 @@
         $('.channels .channel').on('click', function () {
             let that = $(this);
             if(that.is('.channel--active')) return;
+            radio.pause();
             let id = that.data('id');
             $('.channels .channel').removeClass('channel--active');
             that.addClass('channel--active');
@@ -36,7 +45,6 @@
                 $(this).data('player').pause();
             });
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
-
         });
 
         function getSong() {
@@ -49,4 +57,5 @@
         getSong();
         setInterval(getSong,3000);
     });
+
 })(jQuery);
