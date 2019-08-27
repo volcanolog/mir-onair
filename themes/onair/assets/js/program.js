@@ -9,14 +9,25 @@
             this.programContain.removeClass('loaded').find('i').fadeIn(150);
             return this;
         },
-        premium: function() {
+        getProgram: function(id) {
             let that = this;
+            let mapping = {
+                1: null,
+                2: null,
+                3: null,
+                4: null,
+                5: 1,
+                6: 0
+            };
             $.ajax({
                 url: '//dev19.mir24.tv/api/smart/v1/channels',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    let broadcastsToday = data[0].broadcasts.filter(item => dateFns.isToday(new Date(item.time.begin)));
+                    if(mapping[id] === undefined) {
+                        return true;
+                    }
+                    let broadcastsToday = data[mapping[id]].broadcasts.filter(item => dateFns.isToday(new Date(item.time.begin)));
                     let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
                     let result = broadcastsToday.slice(index);
                     that.playingNow.html(result[0].title);
@@ -28,10 +39,8 @@
                     that.programContain.addClass('loaded').find('i').fadeOut(150);
                 }
             });
+
         }
     }
 
-    $(document).ready(function () {
-        // window.program.reset().premium();
-    });
 })(jQuery);
