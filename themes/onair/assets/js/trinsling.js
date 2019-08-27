@@ -49,6 +49,9 @@
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
 
+        window.program.reset().getProgram($('.channels .channel.channel--active').data('id'));
+        $('.further__title').empty().html('Далее на ' + $('.channels .channel.channel--active .channel__name').html());
+
         function getSong() {
             $.get('//radiomir.fm/radiometa.php').done((res) => {
                 if(res) {
