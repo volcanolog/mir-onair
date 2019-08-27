@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    banner_1:
+        label: Банер вверху 1920х90
+        type: fileupload
+        mode: image
+
+    banner_2:
+        label: Полное брендирование
+        type: fileupload
+        mode: image
+
+    banner_3:
+        label: Двойное брендирование, лево
+        type: fileupload
+        mode: image
+
+    banner_4:
+        label: Двойное брендирование, право
+        type: fileupload
+        mode: image
+
+    banner_5:
+        label: Банер 1200х90
+        type: fileupload
+        mode: image
+
+    banner_6:
+        label: Банер внизу 1920х90
+        type: fileupload
+        mode: image
