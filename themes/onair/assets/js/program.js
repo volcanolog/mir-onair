@@ -12,10 +12,7 @@
         getProgram: function(id) {
             let that = this;
             let mapping = {
-                1: null,
-                2: null,
-                3: null,
-                4: null,
+                1: 2,
                 5: 1,
                 6: 0
             };
@@ -25,7 +22,25 @@
                 dataType: 'json',
                 success: function(data) {
                     if(mapping[id] === undefined) {
-                        return true;
+                        let hoursPlus = 0;
+                        switch (id) {
+                            case 2:
+                                hoursPlus = 2;
+                                break;
+                            case 3:
+                                hoursPlus = 4;
+                                break;
+                            case 4:
+                                hoursPlus = 7;
+                                break;
+                            default:
+                                return true;
+                        }
+                        data[mapping[id]] = data[2];
+                        data[mapping[id]].broadcasts.concat().map(function (item) {
+                            item.time.begin = dateFns.addHours(item.time.begin, hoursPlus);
+                            return item;
+                        });
                     }
                     let broadcastsToday = data[mapping[id]].broadcasts.filter(item => dateFns.isToday(new Date(item.time.begin)));
                     let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
