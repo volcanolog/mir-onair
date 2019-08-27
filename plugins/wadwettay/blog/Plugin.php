@@ -87,14 +87,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('wadwettay/blog/posts'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['wadwettay.blog.*'],
-                'order'       => 500,
-                'sideMenu' => [
-                    'posts' => [
-                        'label'       => 'Новости',
-                        'icon'        => 'icon-list-alt',
-                        'url'         => \Backend::url('wadwettay/blog/posts'),
-                    ],
-                ]
+                'order'       => 500
             ],
         ];
     }

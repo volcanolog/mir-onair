@@ -89,14 +89,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('wadwettay/trinsling/streams'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['wadwettay.trinsling.*'],
-                'order'       => 500,
-                'sideMenu' => [
-                    'streams' => [
-                        'label'       => 'Потоки',
-                        'icon'        => 'icon-list-alt',
-                        'url'         => \Backend::url('wadwettay/trinsling/streams'),
-                    ],
-                ]
+                'order'       => 500
             ],
         ];
     }

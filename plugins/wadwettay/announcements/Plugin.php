@@ -87,6 +87,13 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-leaf',
                 'permissions' => ['wadwettay.announcements.*'],
                 'order'       => 500,
+                'sideMenu' => [
+                    'products' => [
+                        'label'       => 'Анонсы',
+                        'icon'        => 'icon-list-alt',
+                        'url'         => \Backend::url('wadwettay/announcements/announcements'),
+                    ]
+                ]
             ],
         ];
     }
