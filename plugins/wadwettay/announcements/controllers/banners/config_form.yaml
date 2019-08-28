@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner
+
+# Model Form Field configuration
+form: $/wadwettay/announcements/models/banner/fields.yaml
+
+# Model Class name
+modelClass: Wadwettay\Announcements\Models\Banner
+
+# Default redirect location
+defaultRedirect: wadwettay/announcements/banners
+
+# Create page
+create:
+    title: Create Banner
+    redirect: wadwettay/announcements/banners/update/:id
+    redirectClose: wadwettay/announcements/banners
+
+# Update page
+update:
+    title: Edit Banner
+    redirect: wadwettay/announcements/banners
+    redirectClose: wadwettay/announcements/banners
+
+# Preview page
+preview:
+    title: Preview Banner

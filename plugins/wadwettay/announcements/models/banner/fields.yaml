@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    blog_title:
+        label: Blog Title
+        description: The title for this blog
+
+    published_at:
+        label: Published date
+        description: When this blog post was published
+        type: datepicker
+
+tabs:
+    fields:
+        test: Test

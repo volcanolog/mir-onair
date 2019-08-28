@@ -4,7 +4,7 @@
         program: $('.program .in'),
         playingNow: $('span.onair__subtitle'),
         reset: function() {
-            this.playingNow.empty()
+            this.playingNow.empty();
             this.program.empty();
             this.programContain.removeClass('loaded').find('i').fadeIn(150);
             return this;
@@ -46,7 +46,7 @@
                     let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
                     let result = broadcastsToday.slice(index);
                     that.playingNow.html(result[0].title);
-                    result = result.slice(1)
+                    result = result.slice(1);
                     result.forEach(item => that.program.append('<div class="program__item">' +
                         '<div class="program__time">' + dateFns.format(item.time.begin, 'HH:mm') + '</div>' +
                         '<div class="program__name">' + item.title + '</div>' +
