@@ -1,6 +1,8 @@
 description = "Default layout"
 
 [trinsling]
+
+[banners]
 ==
 {# created by petepearl #}
 {# petepearl.ru/folio #}
@@ -45,7 +47,7 @@ description = "Default layout"
     <div class="content">
         {# Не разбивал на мелкие компоненты, потому что сказали, что у вас не будет front-end фреймворка... #}
         {# Удачи в программинге ;) #}
-        {% partial 'ad-1920' %}
+        {% partial 'ad-1920' pos="top" %}
         {% partial 'header' %}
         {% partial 'burger' %}
         <nav class="nav">
@@ -57,7 +59,7 @@ description = "Default layout"
         {% partial 'slider' %}
 
         {% partial 'tiles' %}
-        {% partial 'ad-1920' %}
+        {% partial 'ad-1920' pos="bottom" %}
         {% partial 'footer' %}
     </div>
 </div>

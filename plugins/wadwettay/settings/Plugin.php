@@ -54,10 +54,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Wadwettay\Settings\Components\MyComponent' => 'myComponent',
+            'Wadwettay\Settings\Components\Banners' => 'banners',
         ];
     }
 
