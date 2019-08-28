@@ -1,4 +1,6 @@
 ==
+{% if (pos=='top' and banners.getBanners().banner_5.path) %}
 <div class="ad">
-    <img src="images/ad/1200x90.jpg">
+    <a href="{{ banners.getBanners().link_5 }}"><img src="{{ banners.getBanners().banner_5.path }}" /></a>
 </div>
+{% endif %}
