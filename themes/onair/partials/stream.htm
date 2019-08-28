@@ -1,39 +1,12 @@
 [announcements]
 ==
-<div class="container">
+<div class="container" style="display:none;">
     <div class="stream">
         <div class="stream__wrapper">
             <div class="stream__title">
                 Скоро в эфире
             </div>
-            <div class="stream__items">
-                {% for stream in announcements.getAnnounces %}
-                <a href="{{ stream.link }}" class="stream__item">
-                    <div class="stream__top">
-                        <div class="stream__image">
-                            <img src="{{ stream.poster.path }}" alt="">
-                        </div>
-
-                        <div class="stream__icon">
-                            <img src="{{ stream.icon.path ?? 'images/channels/mir-logo.png' }}" alt="">
-                        </div>
-                        {% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
-                        <div class="stream__date">
-                            <span class="stream__date-day">{{ stream.date|date("j") }}</span>
-                            <span class="stream__date-month">{{ mnths[date.date|date("n")] }}</span>
-                            <span> в</span>
-                            <span class="stream__date-time"> {{ stream.date|date("H:i") }}</span>
-                        </div>
-                    </div>
-
-                    <div class="stream__bottom">
-                        <div class="stream__item-title">{{ stream.title }}</div>
-
-                        <div class="stream__item-text">{{ stream.description }}</div>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
+            <div class="stream__items"></div>
         </div>
     </div>
 </div>
