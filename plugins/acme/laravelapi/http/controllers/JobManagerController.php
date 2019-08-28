@@ -70,7 +70,7 @@ class JobManagerController extends Controller
                     $data = [
                         'id' => $value['id'],
                         'title' => $value['title'],
-                        'description' => $value['shortText'],
+                        'description' => sprintf('%s...', substr($value['shortText'], 0, 200)),
                         'image_id' => $value['imageID']
                     ];
                     if (isset($value['videoID'])) {
