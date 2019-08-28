@@ -70,7 +70,7 @@ class JobManagerController extends Controller
                     $data = [
                         'id' => $value['id'],
                         'title' => $value['title'],
-                        'description' => sprintf('%s...', substr($value['shortText'], 0, 200)),
+                        'description' => mysql_real_escape_string(sprintf('%s...', substr($value['shortText'], 0, 200))),
                         'image_id' => $value['imageID']
                     ];
                     if (isset($value['videoID'])) {
