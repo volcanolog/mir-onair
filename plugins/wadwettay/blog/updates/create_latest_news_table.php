@@ -12,7 +12,7 @@ class CreateLatestNewsTable extends Migration
             $table->engine = 'InnoDB';
             $table->integer('id');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->integer('image_id');
             $table->boolean('has_video')->default(false);
         });
