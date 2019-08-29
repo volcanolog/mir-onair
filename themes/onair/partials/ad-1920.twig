@@ -1,3 +1,9 @@
-<div class="ad">
-    <a href=""><img src="http://placehold.it/1920x90/798A9D" /></a>
-</div>
+{% if (pos=='top' and banners.getBanners().banner_1.path) %}
+    <div class="ad">
+        <a href="{{ banners.getBanners().link_1 }}"><img src="{{ banners.getBanners().banner_1.path }}" /></a>
+    </div>
+{% elseif(pos=='bottom' and banners.getBanners().banner_6.path) %}
+    <div class="ad">
+        <a href="{{ banners.getBanners().link_6 }}"><img src="{{ banners.getBanners().banner_6.path }}" /></a>
+    </div>
+{% endif %}

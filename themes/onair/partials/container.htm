@@ -5,22 +5,28 @@
         Лучше из 2 частей -->
 
     <!-- Полное брендирование (демо подложка) -->
+    {% if (banners.getBanners().banner_2.path) %}
     <div class="branding">
         <div class="branding__part branding__part--full">
-            <a href="">
-                <img src="http://placehold.it/1920x1000/798A9D" alt="">
+            <a href="{{ banners.getBanners().link_2 }}">
+                <img src="{{ banners.getBanners().banner_2.path }}" alt="">
             </a>
         </div>
     </div>
+    {% endif %}
 
     <!-- Двойное брендирование (демо подложка из 2х частей) -->
     <div class="branding">
+        {% if (banners.getBanners().banner_3.path) %}
         <div class="branding__part branding__part--left">
-            <a href=""><img src="http://placehold.it/360x720/798A9D" alt=""></a>
+            <a href="{{ banners.getBanners().link_3 }}"><img src="{{ banners.getBanners().banner_3.path }}" alt=""></a>
         </div>
+        {% endif %}
+        {% if (banners.getBanners().banner_4.path) %}
         <div class="branding__part branding__part--right">
-            <a href=""><img src="http://placehold.it/360x720/798A9D" alt=""></a>
+            <a href="{{ banners.getBanners().link_4 }}"><img src="{{ banners.getBanners().banner_4.path }}" alt=""></a>
         </div>
+        {% endif %}
     </div>
 
     <div class="container__content">
