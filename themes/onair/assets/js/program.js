@@ -38,7 +38,7 @@
                         }
                         data[mapping[id]] = data[2];
                         data[mapping[id]].broadcasts.concat().map(function (item) {
-                            item.time.begin = dateFns.addHours(item.time.begin, hoursPlus);
+                            item.time.begin = dateFns.subHours(item.time.begin, hoursPlus);
                             return item;
                         });
                     }
