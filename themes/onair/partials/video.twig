@@ -1,6 +1,6 @@
 <div class="trinsling-tabs">
     {% for stream in trinsling.getStreams %}
-        <div class="tab {% if loop.first %}active{% endif %}" data-index="{{ stream.id }}">
+        <div class="tab {% if loop.index==5 %}active{% endif %}" data-index="{{ stream.id }}">
             <div class="video" data-rand="{{ random() }}" data-stream="{{ stream.src }}"></div>
         </div>
     {% endfor %}

@@ -1,7 +1,7 @@
 ==
 <div class="channels">
     {% for stream in trinsling.getStreams %}
-    <a href="javascript:void(0);" data-id="{{ stream.id }}" class="channel {% if loop.first %}channel--active{% endif %}">
+    <a href="javascript:void(0);" data-id="{{ stream.id }}" class="channel {% if loop.index == 5 %}channel--active{% endif %}">
         {% if (stream.icon) %}
         <span class="channel__logo">
             <img src="{{ stream.icon.path }}" alt="">
@@ -13,4 +13,3 @@
     </a>
     {% endfor %}
 </div>
-
