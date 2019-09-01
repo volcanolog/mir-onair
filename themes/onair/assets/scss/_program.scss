@@ -3,7 +3,12 @@
   line-height: 18px;
   color: #000000;
   padding: 5px 20px;
-
+  background-color: #333;
+  min-height: calc(100% - 10px);
+  transition: 500ms ease background-color;
+  &.loaded {
+    background: none;
+  }
   &__item {
     display: flex;
     margin: 8px 0;

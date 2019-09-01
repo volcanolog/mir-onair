@@ -21,6 +21,11 @@ window.mirplayer = {
         this.audio.play();
     },
 
+    pause: function () {
+        $('.player__button').removeClass('player__button--play');
+        this.audio.pause();
+    },
+
     moveSlider: function () {
         var volume = mirplayer.slider.slider('value');
         mirplayer.setVolume(volume / 100);
@@ -39,17 +44,23 @@ window.mirplayer = {
     bind: function () {
         var _this = this;
         $('.js-player-button').on('click', function () {
-            if (_this.isPlay) {
+            if(_this.audio.paused) {
+                window.players.forEach(function (player) {
+                    if (!player.paused()) {
+                        player.pause();
+                    }
+                });
+                $('.player__button').addClass('player__button--play');
+                _this.audio.play();
+            }else if (_this.audio.played) {
                 $('.player__button').removeClass('player__button--play');
                 _this.audio.pause();
-            } else {
+            }else {
                 $('.player__button').addClass('player__button--play');
                 _this.audio.play();
                 _this.setVolume(.5);
                 _this.slider.slider( "value", 50);
             }
-            _this.isPlay = !_this.isPlay;
-
             return false;
         });
 
