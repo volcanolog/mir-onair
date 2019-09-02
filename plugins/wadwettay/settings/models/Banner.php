@@ -47,7 +47,9 @@ class Banner extends Model
         'banner_5' => ['System\Models\File'],
         'banner_6' => ['System\Models\File']
     ];
-    public $attachMany = [];
+    public $attachMany = [
+        'banner_carousel' => ['System\Models\File']
+    ];
 
     public function __construct()
     {

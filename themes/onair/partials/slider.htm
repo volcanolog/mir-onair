@@ -4,29 +4,15 @@
         <div class="slider">
             <div class="slider__wrapper">
                 <div class="slider__items">
+                    {% if (banners.getBanners().banner_carousel) %}
+                    {% for item in banners.getBanners().banner_carousel %}
                     <div class="slider__item">
                         <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
+                            <img src="{{ item.path }}" alt="">
                         </div>
                     </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
+                    {% endfor %}
+                    {% endif %}
                 </div>
 
                 {% partial 'ad-1200' %}
