@@ -14,7 +14,7 @@
                 $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
-                if($('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]').hasClass('.channel--active')) {
+                if($('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]').hasClass('channel--active')) {
                     autoplay = true;
                 }else {
                     autoplay = false;
