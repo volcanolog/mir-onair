@@ -10,10 +10,10 @@
             let playerId = 'html5player-' + $(this).data('rand');
             let stream = $(this).data('stream');
             if(Modernizr.video){
-                $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls autoplay>" +
+                $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
-                let player = videojs(playerId)
+                let player = videojs(playerId, {autoplay: false})
                     .on('playing', function () {
                         radio.pause();
                     });
