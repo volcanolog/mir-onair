@@ -9,11 +9,17 @@
         $('.translation .video').each(function () {
             let playerId = 'html5player-' + $(this).data('rand');
             let stream = $(this).data('stream');
+            let autoplay = false;
             if(Modernizr.video){
                 $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
-                let player = videojs(playerId, {autoplay: false})
+                if($('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]')) {
+                    autoplay = true;
+                }else {
+                    autoplay = false;
+                }
+                let player = videojs(playerId, {autoplay: autoplay})
                     .on('playing', function () {
                         radio.pause();
                     });
