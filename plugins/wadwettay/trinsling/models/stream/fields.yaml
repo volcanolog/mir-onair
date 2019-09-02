@@ -1,0 +1,15 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+    icon:
+        label: Иконка
+        type: fileupload
+    src:
+        label: SRC
+    poster:
+        label: Постер
+        type: fileupload

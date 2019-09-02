@@ -1,0 +1,4 @@
+1.0.1:
+  - Run table migrations
+  - create_latest_news_table.php
+  - create_posts_table.php

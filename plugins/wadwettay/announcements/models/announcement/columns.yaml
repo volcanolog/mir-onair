@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Заголовок
+    description:
+        label: Описание
+    date:
+        label: Дата
+    created_at:
+        label: Дата создания

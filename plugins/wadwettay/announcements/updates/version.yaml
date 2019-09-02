@@ -1,0 +1,7 @@
+1.0.1:
+  - Run table migrations
+  - create_announcements_table.php
+
+1.0.2:
+  - Run table migrations
+  - create_banners_table.php
