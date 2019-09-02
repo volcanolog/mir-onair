@@ -8,10 +8,11 @@
 
         $('.translation .video').each(function () {
             let playerId = 'html5player-' + $(this).data('rand');
+            let poster = $(this).data('poster');
             let stream = $(this).data('stream');
             let autoplay = false;
             if(Modernizr.video){
-                $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
+                $(this).html("<video poster='" + poster + "' id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
                 if($('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]').hasClass('channel--active')) {
