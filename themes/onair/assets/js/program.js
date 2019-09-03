@@ -23,7 +23,6 @@
                     }
                 });
             }
-            return [...that.programData];
         },
         render: function(id) {
             let that = this;
@@ -83,7 +82,7 @@
             let that = this;
             clearInterval(this.interval);
             this.interval = setInterval(function () {
-                that.getProgram(id);
+                that.render(id);
             }, timeout);
         }
     }
