@@ -51,7 +51,7 @@
             $('.translation .video').each(function () {
                 $(this).data('player').pause();
             });
-            $('.further__title').empty().html('Программа ' + that.find('.channel__name').html());
+            $('.further__title').empty().html('Далее на ' + that.find('.channel__name').html());
             window.program.reset().getProgram(id);
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
