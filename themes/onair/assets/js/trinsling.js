@@ -8,12 +8,19 @@
 
         $('.translation .video').each(function () {
             let playerId = 'html5player-' + $(this).data('rand');
+            let poster = $(this).data('poster');
             let stream = $(this).data('stream');
+            let autoplay = false;
             if(Modernizr.video){
-                $(this).html("<video id='" + playerId + "' class='html5video video-js vjs-default-skin' controls autoplay>" +
+                $(this).html("<video poster='" + poster + "' id='" + playerId + "' class='html5video video-js vjs-default-skin' controls>" +
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
-                let player = videojs(playerId)
+                if($('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]').hasClass('channel--active')) {
+                    autoplay = true;
+                }else {
+                    autoplay = false;
+                }
+                let player = videojs(playerId, {autoplay: autoplay})
                     .on('playing', function () {
                         radio.pause();
                     });
@@ -44,13 +51,15 @@
             $('.translation .video').each(function () {
                 $(this).data('player').pause();
             });
-            $('.further__title').empty().html('Далее на ' + that.find('.channel__name').html());
+            $('.further__title:eq(0)').empty().html('Далее на ' + that.find('.channel__name').html());
+            $('.further__title:eq(1)').empty().html('Программа ' + that.find('.channel__name').html());
             window.program.reset().getProgram(id);
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
 
         window.program.reset().getProgram($('.channels .channel.channel--active').data('id'));
-        $('.further__title').empty().html('Далее на ' + $('.channels .channel.channel--active .channel__name').html());
+        $('.further__title:eq(0)').empty().html('Далее на ' + $('.channels .channel.channel--active .channel__name').html());
+        $('.further__title:eq(1)').empty().html('Программа ' + $('.channels .channel.channel--active .channel__name').html());
 
         function getSong() {
             $.get('//radiomir.fm/radiometa.php').done((res) => {
