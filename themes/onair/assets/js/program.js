@@ -52,7 +52,7 @@
                     break;
             }
             if(subHours) {
-                items = items.slice().map(function (item) {
+                items = items.map(function (item) {
                     return {
                         ...item,
                         time: {
