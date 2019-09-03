@@ -51,13 +51,15 @@
             $('.translation .video').each(function () {
                 $(this).data('player').pause();
             });
-            $('.further__title').empty().html('Далее на ' + that.find('.channel__name').html());
+            $('.further__title:eq(0)').empty().html('Далее на ' + that.find('.channel__name').html());
+            $('.further__title:eq(1)').empty().html('Программа ' + that.find('.channel__name').html());
             window.program.reset().getProgram(id);
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
 
         window.program.reset().getProgram($('.channels .channel.channel--active').data('id'));
-        $('.further__title').empty().html('Программа ' + $('.channels .channel.channel--active .channel__name').html());
+        $('.further__title:eq(0)').empty().html('Далее на ' + $('.channels .channel.channel--active .channel__name').html());
+        $('.further__title:eq(1)').empty().html('Программа ' + $('.channels .channel.channel--active .channel__name').html());
 
         function getSong() {
             $.get('//radiomir.fm/radiometa.php').done((res) => {
