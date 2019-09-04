@@ -34,7 +34,7 @@
                 5: 1,
                 6: 0
             };
-            let items = that.getProgram()[mapping[id]].broadcasts;
+            let items = that.programData[mapping[id]].broadcasts;
             let subHours;
             switch (id) {
                 case 2:
@@ -65,8 +65,7 @@
             let index = broadcastsToday.findIndex(item => (new Date(item.time.begin).getTime()) >= Date.now()) - 1;
             let result = broadcastsToday.slice(index);
             that.clear();
-            that.playingNow.html(result[0].title);
-            result = result.slice(1);
+            that.playingNow.html(result[0].title);result = result.slice(1);
             result.forEach(item => that.program.append('<div class="program__item">' +
                 '<div class="program__time">' + dateFns.format(item.time.begin, 'HH:mm') + '</div>' +
                 '<div class="program__name">' + item.title + '</div>' +
@@ -86,4 +85,5 @@
             }, timeout);
         }
     }
+    window.program.getProgram();
 })(jQuery);
