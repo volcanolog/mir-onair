@@ -12,8 +12,10 @@
                                             <img src="{{ getEnv('API_DOMAIN','//dev19.mir24.tv/') }}v2/media/images/uploaded/list_crop{{ item.image_id }}.jpg"
                                                  alt="">
                                         {% else %}
-                                            <img src="/images/no-image.jpg"
-                                                 alt="">
+                                            <div style="max-height: 150px; overflow: hidden;">
+                                                <img src="/images/no-image.jpg"
+                                                     alt="">
+                                            </div>
                                         {% endif %}
                                     </div>
                                     {% if item.has_video  %}
