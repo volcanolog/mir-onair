@@ -13,7 +13,7 @@ class JobManagerController extends Controller
         $config = Post::all();
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://dev19.mir24.tv/v2/auth",
+            CURLOPT_URL => env('API_DOMAIN','//dev19.mir24.tv/') . "v2/auth",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -41,7 +41,7 @@ class JobManagerController extends Controller
             foreach ($config as $item) {
                 $curl = curl_init();
                 curl_setopt_array($curl, array(
-                    CURLOPT_URL => "https://dev19.mir24.tv/v2/newslist",
+                    CURLOPT_URL => env('API_DOMAIN','//dev19.mir24.tv/') . "v2/newslist",
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => "",
                     CURLOPT_MAXREDIRS => 10,
@@ -71,7 +71,7 @@ class JobManagerController extends Controller
                         'id' => $value['id'],
                         'title' => $value['title'],
                         'description' => $value['shortText'],
-                        'image_id' => $value['imageID']
+                        'image_id' => $value['imageID'] ?? 0
                     ];
                     if (isset($value['videoID'])) {
                         $data['has_video'] = true;
