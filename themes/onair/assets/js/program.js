@@ -14,7 +14,7 @@
             let that = this;
             if(!that.programData) {
                 $.ajax({
-                    url: '//dev19.mir24.tv/api/smart/v1/channels',
+                    url: config_api.url + 'api/smart/v1/channels',
                     type: 'GET',
                     async: false,
                     dataType: 'json',

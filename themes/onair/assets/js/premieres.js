@@ -14,7 +14,7 @@
         12: 'декабря'
     };
     $.ajax({
-        url: '//dev19.mir24.tv/v2/premiere',
+        url: config_api.url + 'v2/premiere',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
