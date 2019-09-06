@@ -33,6 +33,10 @@ fields:
     link_4:
         label: Сслыка
 
+    banner_carousel:
+        label: Карусель
+        type: fileupload
+        mode: image
 
     banner_5:
         label: Банер 1200х90

@@ -76,7 +76,11 @@ $(document).ready(function () {
     if ($slider.length) {
         $slider.slick({
             arrows: false,
-            dots: true
+            dots: true,
+            /** Автоматическое перелистывание карусели */
+            autoplay: true,
+            /** Таймаут автоматического перелистывания */
+            autoplaySpeed: 6000
         });
     }
 
