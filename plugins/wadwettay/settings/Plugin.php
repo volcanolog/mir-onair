@@ -2,6 +2,7 @@
 
 use Backend;
 use Backend\Facades\BackendMenu;
+use Illuminate\Support\Facades\Config;
 use System\Classes\PluginBase;
 use System\Classes\SettingsManager;
 
@@ -107,6 +108,18 @@ class Plugin extends PluginBase
                 'class'       => 'Wadwettay\Settings\Models\Banner',
 //                'url'         => Backend::url('wadwettay/settings/banners'),
                 'order'       => 500
+            ]
+        ];
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'functions' => [
+                'getEnv' => function($key, $default)
+                {
+                    return env($key, $default);
+                }
             ]
         ];
     }
