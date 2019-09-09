@@ -10,33 +10,17 @@ fields:
     link_1:
         label: Сслыка
 
-    banner_2:
-        label: Полное брендирование
-        type: fileupload
-        mode: image
-    link_2:
-        label: Сслыка
-
-
-    banner_3:
-        label: Двойное брендирование, лево
-        type: fileupload
-        mode: image
-    link_3:
-        label: Сслыка
-
-
-    banner_4:
-        label: Двойное брендирование, право
-        type: fileupload
-        mode: image
-    link_4:
-        label: Сслыка
-
-    banner_carousel:
+    bnr_carousel:
         label: Карусель
-        type: fileupload
-        mode: image
+        type: repeater
+        form:
+            fields:
+                banner_carousel:
+                    label: Банер
+                    type: mediafinder
+                    mode: image
+                href:
+                    label: Ссылка
 
     banner_5:
         label: Банер 1200х90

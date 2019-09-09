@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    location:
+        label: Позиция
+        type: radio
+        options:
+            full: [Full, Полное брендирование.]
+            left: [Left, Двойное брендирование(слева).]
+            right: [Right, Двойное брендирование(справа).]
+    date_start:
+        label: Дата
+        type: datepicker
+        format: d F Y
+    date_end:
+        label: Дата
+        type: datepicker
+        format: d F Y
+    image:
+        label: Банер
+        type: fileupload
+    link:
+        label: Ссылка

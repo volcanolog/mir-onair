@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    location:
+        label: Позиция
+    date_start:
+        label: Дата
+    date_end:
+        label: Дата
+    link:
+        label: Ссылка

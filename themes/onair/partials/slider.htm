@@ -1,16 +1,17 @@
 ==
+
 <div class="container">
     <div class="container__content">
         <div class="slider">
             <div class="slider__wrapper">
                 <div class="slider__items">
-                    {% if (banners.getBanners().banner_carousel) %}
-                    {% for item in banners.getBanners().banner_carousel %}
-                    <div class="slider__item">
+                    {% if (banners.getBanners().bnr_carousel) %}
+                    {% for item in banners.getBanners().bnr_carousel %}
+                    <a href="{{ item.href }}" target="_blank" class="slider__item">
                         <div class="slider__image">
-                            <img src="{{ item.path }}" alt="">
+                            <img src="{{ item.banner_carousel | media }}" alt="">
                         </div>
-                    </div>
+                    </a>
                     {% endfor %}
                     {% endif %}
                 </div>

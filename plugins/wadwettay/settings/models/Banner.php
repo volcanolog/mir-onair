@@ -29,6 +29,7 @@ class Banner extends Model
      */
     protected $fillable = [];
 
+
     /**
      * @var array Relations
      */
@@ -41,14 +42,16 @@ class Banner extends Model
     public $morphMany = [];
     public $attachOne = [
         'banner_1' => ['System\Models\File'],
-        'banner_2' => ['System\Models\File'],
-        'banner_3' => ['System\Models\File'],
-        'banner_4' => ['System\Models\File'],
         'banner_5' => ['System\Models\File'],
-        'banner_6' => ['System\Models\File']
+        'banner_6' => ['System\Models\File'],
+        'https://mir24.tv/' => ['System\Models\File']
     ];
     public $attachMany = [
-        'banner_carousel' => ['System\Models\File']
+//        'banner_carousel' => ['System\Models\File']
+    ];
+
+    protected $jsonable = [
+        'banner_carousel'
     ];
 
     public function __construct()

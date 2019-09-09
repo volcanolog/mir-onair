@@ -3,8 +3,8 @@
         Господа, демо подложку не забудьте пожалуйста
         Лучше из 2 частей -->
 
-    <!-- Полное брендирование (демо подложка) -->
-    {% if (banners.getBanners().banner_2.path) %}
+    {% if (schedule_banners.getFullBanner()) %}
+        <!-- Полное брендирование (демо подложка) -->
         <div class="branding">
             <div class="branding__part branding__part--full">
                 <a href="{{ banners.getBanners().link_2 }}">
@@ -16,14 +16,14 @@
 
     <!-- Двойное брендирование (демо подложка из 2х частей) -->
     <div class="branding">
-        {% if (banners.getBanners().banner_3.path) %}
+        {% if (schedule_banners.getLeftBanner()) %}
             <div class="branding__part branding__part--left">
-                <a href="{{ banners.getBanners().link_3 }}"><img src="{{ banners.getBanners().banner_3.path }}" alt=""></a>
+                <a href="{{ schedule_banners.getLeftBanner().link }}"><img src="{{ schedule_banners.getLeftBanner().image.path }}" alt=""></a>
             </div>
         {% endif %}
-        {% if (banners.getBanners().banner_4.path) %}
+        {% if (schedule_banners.getRightBanner()) %}
             <div class="branding__part branding__part--right">
-                <a href="{{ banners.getBanners().link_4 }}"><img src="{{ banners.getBanners().banner_4.path }}" alt=""></a>
+                <a href="{{ schedule_banners.getLeftBanner().link }}"><img src="{{ schedule_banners.getLeftBanner().image.path }}" alt=""></a>
             </div>
         {% endif %}
     </div>
