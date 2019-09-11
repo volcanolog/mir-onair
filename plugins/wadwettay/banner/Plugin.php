@@ -51,7 +51,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Wadwettay\Banner\Components\Banners' => 'banners',
+            'Wadwettay\Banner\Components\Banners' => 'schedule_banners',
         ];
     }
 
