@@ -2,6 +2,14 @@
 
     $(document).ready(function() {
 
+        $.urlParam = function(name){
+            let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results==null) {
+                return null;
+            }
+            return decodeURI(results[1]) || 0;
+        };
+
         window.players = [];
 
         let radio = window.mirplayer;
@@ -56,6 +64,10 @@
             window.program.reset().render(id).update(id, 6000);
             $('.trinsling-tabs .tab[data-index="' + id + '"]').find('.video').data('player').play();
         });
+
+        if ($.urlParam('stream_id')) {
+            $('.channel[data-id=' + $.urlParam('stream_id') + ']').trigger('click');
+        }
 
         let activeId = $('.channels .channel.channel--active').data('id');
         window.program.reset().render(activeId).update(activeId, 6000);
