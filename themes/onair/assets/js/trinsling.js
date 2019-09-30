@@ -15,6 +15,7 @@
         let radio = window.mirplayer;
 
         $('.translation .video').each(function () {
+            let tabIndex = $(this).closest('.tab').data('index');
             let playerId = 'html5player-' + $(this).data('rand');
             let poster = $(this).data('poster');
             let stream = $(this).data('stream');
@@ -24,6 +25,8 @@
                     "<source src=\"" +stream + "\" type='application/x-mpegurl' >" +
                     "</video>");
                 if(!$.urlParam('stream_id') && $('.channel[data-id="' + $(this).closest('.tab.active').data('index') + '"]').hasClass('channel--active')) {
+                    autoplay = true;
+                }else if($.urlParam('stream_id') && tabIndex == $.urlParam('stream_id')) {
                     autoplay = true;
                 }else {
                     autoplay = false;
