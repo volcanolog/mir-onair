@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+    description:
+        label: Описание
+    date:
+        label: Дата
+        type: datepicker
+        format: d F Y
+    link:
+        label: Ссылка
+    icon:
+        label: Иконка
+        type: fileupload
+    poster:
+        label: Постер
+        type: fileupload

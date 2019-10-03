@@ -4,4 +4,17 @@
     display: block;
     outline: none;
   }
+  .video-js {
+    width: auto !important;
+    height: 540px !important;
+  }
+}
+
+@media screen and (max-width: 660px){
+  .video-js .vjs-tech {
+    position: initial;
+  }
+  .video .video-js {
+    height: auto !important;
+  }
 }

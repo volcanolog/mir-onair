@@ -3,29 +3,15 @@
         <div class="slider">
             <div class="slider__wrapper">
                 <div class="slider__items">
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="slider__item">
-                        <div class="slider__image">
-                            <img src="images/slider/slide1.jpg" alt="">
-                        </div>
-                    </div>
+                    {% if (banners.getBanners().bnr_carousel) %}
+                        {% for item in banners.getBanners().bnr_carousel %}
+                            <a href="{{ item.link }}" target="_blank" class="slider__item">
+                                <div class="slider__image">
+                                    <img src="{{ item.banner_carousel | media }}" alt="">
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
                 </div>
 
                 {% include '../components/ad-1200.twig' %}

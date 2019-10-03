@@ -1,231 +1,43 @@
 <div class="container">
-  <div class="container__content">
-    <div class="tiles">
-      <div class="tiles__wrapper">
-        <div class="tiles__items">
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image1.jpg" alt="">
+    <div class="container__content">
+        <div class="tiles">
+            <div class="tiles__wrapper">
+                <div class="tiles__items">
+                    {% for item in news.getNews %}
+                        <a href="https://mir24.tv/news/{{ item.id }}" class="tiles__item">
+                            <div class="tiles__inner">
+                                <div class="tiles__top">
+                                    <div class="tiles__image">
+                                        {% if item.image_id %}
+                                            <img src="{{ getEnv('API_DOMAIN','//dev19.mir24.tv/') }}v2/media/images/uploaded/list_crop{{ item.image_id }}.jpg"
+                                                 alt="">
+                                        {% else %}
+                                            <div style="max-height: 150px; overflow: hidden;">
+                                                <img src="/images/no-image.jpg"
+                                                     alt="">
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    {% if item.has_video  %}
+                                        <div class="tiles__icon"></div>
+                                    {% endif %}
+                                    <div class="tiles__mark tiles__mark--mobile">Новости</div>
+                                </div>
+                                <div class="tiles__bottom">
+                                    <div class="tiles__title">
+                                        {{ item.title }}
+                                    </div>
+
+                                    <div class="tiles__text">
+                                        {{ item.description }}
+                                    </div>
+                                    <div class="tiles__mark">Новости</div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__mark">Новости</div>
-              </div>
             </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image2.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image3.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image4.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image5.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image6.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image7.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="" class="tiles__item">
-            <div class="tiles__inner">
-              <div class="tiles__top">
-                <div class="tiles__image">
-                  <img src="images/tiles/tiles-image8.jpg" alt="">
-                </div>
-
-                <div class="tiles__icon"></div>
-
-                <div class="tiles__mark tiles__mark--mobile">Новости</div>
-              </div>
-
-              <div class="tiles__bottom">
-                <div class="tiles__title">
-                  В Минобороны пообещали потушить пожар на военном складе под Ачинском к концу дня
-                </div>
-
-                <div class="tiles__text">
-                  Причиной возгорания на складе мог стать человеческий фактор, сказал замглавы Минобороны.
-                </div>
-
-                <div class="tiles__string">
-                  <div class="tiles__mark">Новости</div>
-                </div>
-              </div>
-            </div>
-          </a>
         </div>
-      </div>
     </div>
-  </div>
 </div>

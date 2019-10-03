@@ -1,4 +1,8 @@
 description = "Default layout"
+
+[trinsling]
+
+[banners]
 ==
 {# created by petepearl #}
 {# petepearl.ru/folio #}
@@ -13,19 +17,29 @@ description = "Default layout"
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="msapplication-TileColor" content="#f5431a">
     <meta name="theme-color" content="#f5431a">
-    <title>Document</title>
-
+    <title>ОНЛАЙН-ВЕЩАНИЕ - МЕЖГОСУДАРСТВЕННАЯ ТЕЛЕРАДИОКОМПАНИЯ МИР</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     {# get параметр нужен для демонстрации верстки на хостинге, чтобы кэш стилей сбросить, уберите на этапе программинга #}
+    <link href="{{ ['assets/js/video/video-js.css']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/scss/main.scss']|theme }}" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="{{ 'assets/js/video/libs/html5shiv.js'|theme }}" type="text/javascript"></script>
+    <script src="{{ 'assets/js/video/libs/respond.min.js'|theme }}" type="text/javascript"></script>
+    <![endif]-->
+    <!-- include flowplayer -->
+    <script src="{{ 'assets/js/video/flowplayer.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/flowplayer.hlsjs.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/modernizr.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/video.js'|theme }}"></script>
+    <script src="{{ 'assets/js/video/videojs-contrib-hls.min.js'|theme }}"></script>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="{{ 'assets/js/jquery-ui.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/js.js'|theme }}"></script>
-
-
 </head>
 <body>
 
@@ -33,7 +47,7 @@ description = "Default layout"
     <div class="content">
         {# Не разбивал на мелкие компоненты, потому что сказали, что у вас не будет front-end фреймворка... #}
         {# Удачи в программинге ;) #}
-        {% partial 'ad-1920' %}
+        {% partial 'ad-1920' pos="top" %}
         {% partial 'header' %}
         {% partial 'burger' %}
         <nav class="nav">
@@ -45,10 +59,18 @@ description = "Default layout"
         {% partial 'slider' %}
 
         {% partial 'tiles' %}
-        {% partial 'ad-1920' %}
+        {% partial 'ad-1920' pos="bottom" %}
         {% partial 'footer' %}
     </div>
 </div>
-
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    let config_api = {"url":"{{ getEnv('API_DOMAIN','//dev19.mir24.tv/') }}"};
+    /* ]]> */
+</script>
+<script defer src="{{ 'assets/js/trinsling.js'|theme }}"></script>
+<script defer src="{{ 'assets/js/program.js'|theme }}"></script>
+<script defer src="{{ 'assets/js/premieres.js'|theme }}"></script>
 </body>
 </html>

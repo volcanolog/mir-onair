@@ -1,0 +1,39 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    banner_1:
+        label: Банер вверху 1920х90
+        type: fileupload
+        mode: image
+    link_1:
+        label: Сслыка
+
+    bnr_carousel:
+        label: Карусель
+        type: repeater
+        form:
+            fields:
+                banner_carousel:
+                    label: Банер
+                    type: mediafinder
+                    mode: image
+                href:
+                    label: Ссылка
+
+    banner_5:
+        label: Банер 1200х90
+        type: fileupload
+        mode: image
+    link_5:
+        label: Сслыка
+
+
+    banner_6:
+        label: Банер внизу 1920х90
+        type: fileupload
+        mode: image
+    link_6:
+        label: Сслыка
+

@@ -1,46 +1,14 @@
 <div class="channels">
-    <a href="" class="channel channel--active">
-        <span class="channel__logo">
-            <img src="images/channels/mir-logo.png" alt="">
+    {% for stream in trinsling.getStreams %}
+        <a href="javascript:void(0);" data-id="{{ stream.id }}" class="channel {% if loop.first %}channel--active{% endif %}">
+            {% if (stream.icon) %}
+                <span class="channel__logo">
+            <img src="{{ stream.icon.path }}" alt="">
         </span>
-        <span class="channel__name">
-            МИР
+            {% endif %}
+            <span class="channel__name">
+            {{ stream.title }}
         </span>
-    </a>
-
-    <a href="" class="channel">
-        <span class="channel__name">
-            МИР (+2)
-        </span>
-    </a>
-
-    <a href="" class="channel">
-        <span class="channel__name">
-            МИР (+4)
-        </span>
-    </a>
-
-    <a href="" class="channel">
-        <span class="channel__name">
-            МИР (+7)
-        </span>
-    </a>
-
-    <a href="" class="channel">
-        <span class="channel__logo">
-            <img src="images/channels/mir24-logo.png" alt="">
-        </span>
-        <span class="channel__name">
-            МИР 24
-        </span>
-    </a>
-
-    <a href="" class="channel">
-        <span class="channel__logo">
-            <img src="images/channels/mir-premium-logo.png" alt="">
-        </span>
-        <span class="channel__name">
-            МИР PREMIUM
-        </span>
-    </a>
+        </a>
+    {% endfor %}
 </div>
