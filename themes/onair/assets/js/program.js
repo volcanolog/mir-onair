@@ -5,6 +5,14 @@
         programContain: $('.program'),
         program: $('.program .in'),
         playingNow: $('span.onair__subtitle'),
+        linksPrograms: {
+          1: 'http://mirtv.ru/teleprogramm/mir/',
+          2: 'http://mirtv.ru/teleprogramm/mirplus2/',
+          3: 'http://mirtv.ru/teleprogramm/mirplus4/',
+          4: 'http://mirtv.ru/teleprogramm/mirplus7/',
+          5: 'http://mirtv.ru/teleprogramm/mir24/',
+          6: 'http://mirtv.ru/teleprogramm/mirhd/',
+        },
         reset: function() {
             this.clear();
             this.programContain.removeClass('loaded').find('i').fadeIn(150);
@@ -70,6 +78,7 @@
                 '<div class="program__time">' + dateFns.format(item.time.begin, 'HH:mm') + '</div>' +
                 '<div class="program__name">' + item.title + '</div>' +
                 '</div>'));
+            $('.further__button:eq(1)').attr('href', window.program.linksPrograms[id]);
             that.programContain.addClass('loaded').find('i').fadeOut(150);
             return this;
         },
