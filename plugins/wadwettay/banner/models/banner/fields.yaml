@@ -3,6 +3,9 @@
 # ===================================
 
 fields:
+    title:
+        label: Заголовок
+        type: text
     location:
         label: Позиция
         type: radio

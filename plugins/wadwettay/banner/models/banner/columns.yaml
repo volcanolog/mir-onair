@@ -6,6 +6,9 @@ columns:
     id:
         label: ID
         searchable: true
+    title:
+        label: Заголовок
+        searchable: true
     location:
         label: Позиция
     date_start:

@@ -1,3 +1,6 @@
 1.0.1:
   - Run table migrations
   - create_banners_table.php
+1.0.2:
+  - Run table migrations
+  - add_title_banners_table.php
