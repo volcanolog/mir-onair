@@ -5,11 +5,11 @@
         <div class="slider">
             <div class="slider__wrapper">
                 <div class="slider__items">
-                    {% if (banners.getBanners().bnr_carousel) %}
-                    {% for item in banners.getBanners().bnr_carousel %}
-                    <a href="{{ item.href }}" target="_blank" class="slider__item">
+                    {% if (schedule_banners.getCarouselBanner()) %}
+                    {% for item in schedule_banners.getCarouselBanner() %}
+                    <a href="{{ item.link }}" target="_blank" class="slider__item">
                         <div class="slider__image">
-                            <img src="{{ item.banner_carousel | media }}" alt="">
+                            <img src="{{ item.image.path }}" alt="">
                         </div>
                     </a>
                     {% endfor %}

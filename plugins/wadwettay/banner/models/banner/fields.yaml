@@ -7,9 +7,13 @@ fields:
         label: Позиция
         type: radio
         options:
+            baner-top: [Top baner, Банер вверху 1920х90.]
             full: [Full, Полное брендирование.]
             left: [Left, Двойное брендирование(слева).]
             right: [Right, Двойное брендирование(справа).]
+            carousel: [Carousel, Карусель.]
+            baner-center: [Center baner, Банер 1200х90.]
+            baner-bottom: [Bottom baner, Банер внизу 1920х90.]
     date_start:
         label: Дата
         type: datepicker

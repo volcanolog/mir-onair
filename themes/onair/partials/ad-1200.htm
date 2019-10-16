@@ -1,6 +1,6 @@
 ==
-{% if (banners.getBanners().banner_5.path) %}
+{% if (schedule_banners.getCenterBanner()) %}
 <div class="ad">
-    <a href="{{ banners.getBanners().link_5 }}"><img src="{{ banners.getBanners().banner_5.path }}" /></a>
+    <a href="{{ schedule_banners.getCenterBanner().link }}"><img src="{{ schedule_banners.getCenterBanner().image.path }}" /></a>
 </div>
 {% endif %}

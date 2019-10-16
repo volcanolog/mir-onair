@@ -29,6 +29,11 @@ class Banners extends ComponentBase
         return [];
     }
 
+    public function getTopBanner()
+    {
+        return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'baner-top')->first();
+    }
+
     public function getFullBanner()
     {
         return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'full')->first();
@@ -42,5 +47,20 @@ class Banners extends ComponentBase
     public function getRightBanner()
     {
         return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'right')->first();
+    }
+
+    public function getCarouselBanner()
+    {
+        return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'carousel')->get();
+    }
+
+    public function getCenterBanner()
+    {
+        return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'baner-center')->first();
+    }
+
+    public function getBottomBanner()
+    {
+        return Banner::where('date_start', '<', $this->now)->where('date_end', '>', $this->now)->where('location', 'baner-bottom')->first();
     }
 }

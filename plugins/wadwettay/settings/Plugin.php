@@ -99,6 +99,8 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
+        return []; // Remove this line to activate
+
         return [
             'banners' => [
                 'label'       => 'Банеры',

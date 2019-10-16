@@ -1,9 +1,9 @@
-{% if (pos=='top' and banners.getBanners().banner_1.path) %}
+{% if (pos=='top' and schedule_banners.getTopBanner()) %}
     <div class="ad">
-        <a href="{{ banners.getBanners().link_1 }}"><img src="{{ banners.getBanners().banner_1.path }}" /></a>
+        <a href="{{ schedule_banners.getTopBanner().link }}"><img src="{{ schedule_banners.getTopBanner().image.path }}" /></a>
     </div>
-{% elseif(pos=='bottom' and banners.getBanners().banner_6.path) %}
+{% elseif(pos=='bottom' and schedule_banners.getBottomBanner()) %}
     <div class="ad">
-        <a href="{{ banners.getBanners().link_6 }}"><img src="{{ banners.getBanners().banner_6.path }}" /></a>
+        <a href="{{ schedule_banners.getBottomBanner().link }}"><img src="{{ schedule_banners.getBottomBanner().image.path }}" /></a>
     </div>
 {% endif %}
